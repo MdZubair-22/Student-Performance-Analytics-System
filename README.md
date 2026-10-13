@@ -20,6 +20,7 @@ of the class. It uses Pandas to work with the data and NumPy for calculations.
   who fail at least one subject.
 - `test_project.py` contains tests for the grade and result calculations.
 - `requirements.txt` lists the Python packages used.
+- [Documentation](Documentation.pdf)
 
 ## Grade and result rules
 
