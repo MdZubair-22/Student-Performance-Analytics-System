@@ -51,11 +51,30 @@ def show_report(results):
 
 def save_outputs(results):
     OUTPUT_DIR.mkdir(exist_ok=True)
-    results.to_csv(OUTPUT_DIR / "student_results.csv", index=False)
-    subject_averages = results[SUBJECTS].mean().rename_axis("subject").reset_index(name="average_marks")
-    subject_averages.to_csv(OUTPUT_DIR / "subject_averages.csv", index=False)
-    print(f"\nSaved detailed results to: {OUTPUT_DIR / 'student_results.csv'}")
-    print(f"Saved subject averages to: {OUTPUT_DIR / 'subject_averages.csv'}")
+    output_files = [
+        OUTPUT_DIR / "student_results.csv",
+        OUTPUT_DIR / "subject_averages.csv",
+    ]
+
+    for file_path in output_files:
+        try:
+            file_path.unlink(missing_ok=True)
+        except PermissionError as error:
+            print(f"\nWarning: Could not replace output file '{file_path.name}' because it is open or not writable.")
+            print(f"Please close the file and rerun the script. Details: {error}")
+            return
+
+    try:
+        results.to_csv(output_files[0], index=False)
+        subject_averages = results[SUBJECTS].mean().rename_axis("subject").reset_index(name="average_marks")
+        subject_averages.to_csv(output_files[1], index=False)
+    except PermissionError as error:
+        print(f"\nWarning: Could not write the CSV output files. Please close any open spreadsheets and try again.")
+        print(f"Details: {error}")
+        return
+
+    print(f"\nSaved detailed results to: {output_files[0]}")
+    print(f"Saved subject averages to: {output_files[1]}")
 
 
 def main():
