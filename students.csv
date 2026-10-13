@@ -1,0 +1,23 @@
+student_id,name,department,python,mathematics,statistics,data_analysis,attendance_percent
+STU001,Aarav Patil,AIML,82,76,91,88,92
+STU002,Sana Shaikh,CSE,74,81,79,84,86
+STU003,Rohan Kulkarni,ECE,65,70,68,73,78
+STU004,Ayesha Khan,AIML,93,89,95,91,96
+STU005,Kiran Naik,ISE,58,62,55,67,72
+STU006,Meera Joshi,CSE,88,84,86,90,94
+STU007,Imran Mulla,AIML,71,68,74,77,80
+STU008,Nisha Rao,ECE,79,83,75,81,89
+STU009,Vivek Desai,ISE,46,52,49,57,65
+STU010,Fatima Noor,CSE,85,92,88,87,93
+STU011,Aditya Hegde,AIML,67,72,70,69,75
+STU012,Pooja More,ECE,90,86,82,89,91
+STU013,Sameer Khan,ISE,54,48,61,59,68
+STU014,Ananya Shetty,CSE,77,80,84,76,88
+STU015,Rahul Bhat,AIML,61,64,58,66,73
+STU016,Zoya Inamdar,ECE,96,94,92,95,97
+STU017,Pranav Jadhav,ISE,72,75,69,71,82
+STU018,Sahil Ahmed,CSE,39,44,47,51,60
+STU019,Divya Sutar,AIML,83,78,80,85,90
+STU020,Harish Gowda,ECE,69,73,66,72,77
+STU021,Neel Shah,CSE,30,66,72,78,81
+STU022,Isha Patil,AIML,74,28,42,60,70
