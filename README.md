@@ -1,29 +1,29 @@
-# Student Performance Analytics
+# Student Performance Analytics System
 
-This is a small Python project that reads student marks from a CSV file and
-shows a summary of the class. It uses Pandas to work with the table of marks
-and NumPy for calculations.
+This Python project reads student marks from a CSV file and shows a summary
+of the class. It uses Pandas to work with the data and NumPy for calculations.
 
-## What it does
+## Features
 
-- Calculates each student's total and average marks.
-- Gives a grade based on the average.
+- Calculates total and average marks for each student.
+- Assigns grades based on the average.
 - Shows whether each student passed or failed.
-- Calculates the average mark for each subject.
-- Prints the class average, highest and lowest averages, and pass/fail counts.
+- Calculates subject averages and class performance.
 - Lists the five students with the highest averages.
-- Saves the results as CSV files in the `output` folder.
+- Saves detailed results and subject averages as CSV files in `output/`.
 
 ## Project files
 
-- `main.py` reads the data, checks it, and prints the results.
-- `functions.py` contains the functions for calculating results and summaries.
-- `students.csv` is the sample data file. It has 22 fictional student records, including two students who fail one or more subjects.
-- `output/` contains the CSV files created when the program runs.
+- `main.py` reads and validates the data, then prints the report.
+- `functions.py` contains reusable calculation and summary functions.
+- `students.csv` contains 22 fictional sample records, including two students
+  who fail at least one subject.
+- `test_project.py` contains tests for the grade and result calculations.
+- `requirements.txt` lists the Python packages used.
 
-## Rules used
+## Grade and result rules
 
-Grades are based on the average of the four subject marks:
+Grades are based on the average mark across the four subjects:
 
 | Average | Grade |
 |---:|:---|
@@ -37,21 +37,28 @@ Grades are based on the average of the four subject marks:
 A student passes if they get at least 35 marks in every subject. Attendance
 of 75% or more is shown as `Eligible`.
 
-## Run the program
+## Run the project
 
-Install Python 3.10 or later, then open a terminal in this folder and run:
+Install Python 3.10 or later. In a terminal opened in this folder, run:
 
 ```bash
 python -m pip install -r requirements.txt
 python main.py
 ```
 
-The program prints the summary and saves `student_results.csv` and
-`subject_averages.csv` inside `output/`.
+The program prints the class summary, subject averages, top students, and
+individual results. It creates `output/student_results.csv` and
+`output/subject_averages.csv`.
 
-## Using different data
+To run the tests:
 
-You can replace the rows in `students.csv`. Keep the column names the same,
-and enter marks and attendance as numbers from 0 to 100. The sample names and
-marks are fictional. Do not use or share real student information without
+```bash
+python -m unittest test_project.py
+```
+
+## Use a different dataset
+
+You can replace the rows in `students.csv`, but keep the column names the
+same. Marks and attendance must be numbers from 0 to 100. The included names
+and marks are fictional. Do not publish real student information without
 permission.
